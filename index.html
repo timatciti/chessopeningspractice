@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Opening Practice</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="controls">
+        <h1>Chess Opening Practice</h1>
+        <p class="subtitle">Train your opening lines and get instant mistake feedback.</p>
+
+        <label for="openingSelect">Opening line</label>
+        <select id="openingSelect"></select>
+
+        <label for="colorSelect">Play as</label>
+        <select id="colorSelect">
+          <option value="w">White</option>
+          <option value="b">Black</option>
+        </select>
+
+        <div class="buttons">
+          <button id="startBtn">Start Training</button>
+          <button id="resetBtn" class="secondary">Reset</button>
+        </div>
+
+        <div id="status" class="status">Choose an opening and start.</div>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+        <div id="lineView" class="line-view"></div>
+      </section>
+
+      <section class="board-wrap">
+        <div class="board-area">
+          <div id="evalBar" class="eval-bar" aria-label="Engine evaluation bar">
+            <div id="evalFill" class="eval-fill"></div>
+          </div>
+          <div id="board"></div>
+        </div>
+        <div id="evalText" class="eval-text">Engine eval: starting…</div>
+        <div id="crossOverlay" class="cross-overlay" aria-hidden="true">✖</div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chess.js@0.12.0/chess.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
